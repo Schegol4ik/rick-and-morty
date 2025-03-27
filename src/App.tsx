@@ -1,11 +1,11 @@
 import Header from "./components/header/Header.tsx";
-import {Main} from "./layouts/main/Main.tsx";
+import {Routing} from "./routing/Routing.tsx";
 
 const App = () => {
     return (
         <div>
             <Header/>
-            <Main/>
+            <Routing/>
         </div>
     );
 };
