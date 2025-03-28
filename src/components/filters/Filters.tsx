@@ -7,7 +7,7 @@ const Filters = () => {
     const genderContent: string[] = ['female', 'male', 'genderless', 'unknown']
 
     return (
-        <div className="ml-5">
+        <div className="min-w-80 border border-red-500 mr-5">
             <h3>Filters</h3>
             <a className='text-blue-500 cursor-pointer'>Clear filters</a>
             <Accordion title="Status" content={statusContent}/>
