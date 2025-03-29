@@ -30,3 +30,12 @@ export type CharactersResponse = {
     info: InfoRequest,
     results: Array<CharacterType>
 }
+
+export type FiltersCharacters = {
+    status: "alive" | "dead" | "unknown" | ""
+    species: "human" | "alien" | "humanoid" | "poopybutthole" | ""
+        | "mythological" | "unknown" | "animal" | "disease" | "robot" | "cronenberg" | "planet"
+    gender: "male" | "female" | "genderless" | "unknown" | ""
+}
+
+export type FilterKey = keyof FiltersCharacters

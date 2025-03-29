@@ -91,7 +91,7 @@ export const Pagination = ({currentPage, totalPages, togglePagination}: Paginati
                         ? <span key={index} className='text-2xl'>{pageNumber}</span>
                         : <button
                             key={index}
-                            className={`w-10 h-10 items-center text-2xl p-1 mx-1 hover:bg-blue-100 hover:text-blue-700
+                            className={`w-10 h-10 items-center text-2xl p-1 mx-1 transition-colors duration-500 ease-in-out hover:bg-blue-100 hover:text-blue-700
                             ${currentPage === pageNumber ? `bg-blue-100 text-blue-700` : ``}
                             `}
                             onClick={() => {

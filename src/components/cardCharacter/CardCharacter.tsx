@@ -10,7 +10,7 @@ type CardCharacterProps = {
 export const CardCharacter = ({image, location, name, status}: CardCharacterProps) => {
     return (
         <div
-            className='relative w-[269px] h-[450x] border-[3px] border-blue-800 mb-5 mr-5 rounded-md hover:border-blue-600'>
+            className='relative w-[269px] h-[450px] border-[3px] border-blue-800 mb-5 mr-5 rounded-md hover:border-blue-600'>
             <img src={image} alt="photo" className="object-cover"/>
             <span className={`absolute top-2 font-bold right-2 text-base ${status === "Alive"
                 ? "bg-green-800/80"
