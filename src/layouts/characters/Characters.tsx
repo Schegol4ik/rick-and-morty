@@ -16,23 +16,26 @@ export const Characters = () => {
     });
     const [search, setSearch] = useState<string>("");
 
-    const {data} = useGetCharactersQuery({page: currentPage, filters, search})
-
+    const {data, isError} = useGetCharactersQuery({page: currentPage, filters, search})
+    console.log(isError)
     const togglePagination = (selectedPages: number) => {
         setCurrentPage(selectedPages);
     }
 
     const toggleFilters = (selectedFilters: FiltersCharacters) => {
+        if (currentPage !== 1) {
+            setCurrentPage(1)
+        }
         setFilters(selectedFilters);
     }
 
     const handlerSearch = (search: string) => {
-        if(currentPage !== 1){
+        if (currentPage !== 1) {
             setCurrentPage(1)
         }
         setSearch(search)
     }
-    console.log(data)
+
     return (
         <div>
             <div className="max-w-7xl mx-auto mt-5 flex flex-col items-center">
@@ -41,12 +44,17 @@ export const Characters = () => {
                 <div className="flex justify-between mt-10">
                     <Filters filters={filters} toggleFilters={toggleFilters}/>
                     <div className='flex flex-wrap justify-start w-full '>
-                        {data?.results.map((item) => <CardCharacter key={item.id} name={item.name} image={item.image} id={item.id}
-                                                                    location={item.location.name} status={item.status}/>
-                        )}
+                        {!isError
+                            ? data?.results.map((item) => <CardCharacter key={item.id} name={item.name}
+                                                                         image={item.image} id={item.id}
+                                                                         location={item.location.name}
+                                                                         status={item.status}/>)
+                            : <div></div>
+                        }
                     </div>
                 </div>
-                <Pagination currentPage={currentPage} totalPages={data?.info.pages ? data.info.pages : 1} togglePagination={togglePagination}/>
+                <Pagination currentPage={currentPage} totalPages={data?.info.pages ? data.info.pages : 1}
+                            togglePagination={togglePagination}/>
             </div>
         </div>
     );

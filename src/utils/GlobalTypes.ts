@@ -39,3 +39,33 @@ export type FiltersCharacters = {
 }
 
 export type FilterKey = keyof FiltersCharacters
+
+export type Episode = {
+    id: number
+    name: string
+    air_date: string
+    episode: string
+    characters: Array<string>
+    url: string
+    created:string
+}
+
+export type EpisodeResponse = {
+    info: InfoRequest,
+    results: Array<Episode>
+}
+
+export type Location = {
+    id: number
+    name: string
+    type: string
+    dimension: string
+    residents: Array<string>
+    url: string
+    created: string
+}
+
+export type LocationResponse = {
+    info: InfoRequest
+    results: Array<Location>
+}

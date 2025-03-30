@@ -1,3 +1,5 @@
+import {NavLink} from "react-router";
+
 type CardCharacterProps = {
     name: string
     image: string
@@ -7,16 +9,20 @@ type CardCharacterProps = {
 }
 
 
-export const CardCharacter = ({image, location, name, status}: CardCharacterProps) => {
+export const CardCharacter = ({image, location, name, status, id}: CardCharacterProps) => {
     return (
-        <div
-            className='relative w-[269px] h-[450px] border-[3px] border-blue-800 mb-5 mr-5 rounded-md hover:border-blue-600'>
+        <NavLink to={`/character/${id}`}
+            className='relative w-[269px] h-[450px] border-[3px]
+             border-blue-800 mb-5 mr-5 rounded-md hover:border-blue-400
+               transition duration-300 ease-in-out  hover:-translate-y-2
+               cursor-pointer
+            '>
             <img src={image} alt="photo" className="object-cover"/>
             <span className={`absolute top-2 font-bold right-2 text-base ${status === "Alive"
-                ? "bg-green-800/80"
+                ? "bg-green-700/80"
                 : status === "Dead"
-                    ? "bg-red-800/80"
-                    : "bg-gray-800/80"
+                    ? "bg-red-700/80"
+                    : "bg-gray-700/80"
             } p-1.5 rounded-lg text-white`}>{status}</span>
             <div className='p-2'>
                 <h2 className='font-bold text-2xl'>{name}</h2>
@@ -25,6 +31,6 @@ export const CardCharacter = ({image, location, name, status}: CardCharacterProp
                     <h3 className='text-xl py-1'>{location}</h3>
                 </div>
             </div>
-        </div>
+        </NavLink>
     );
 };
