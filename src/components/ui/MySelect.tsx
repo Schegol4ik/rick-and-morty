@@ -11,7 +11,7 @@ export const MySelect = ({toggleSelect, count, episode, title}: MySelectProps) =
     return (
         <select
             className='w-full h-10 outline-none border bg-white rounded-md
-             active:shadow-md  active:shadow-blue-400
+             active:shadow-md  active:shadow-blue-400 max-sm:w-72
             '
             value={episode}
             onChange={(e) => toggleSelect(e.currentTarget.value)}>

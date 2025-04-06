@@ -26,7 +26,7 @@ const Filters = ({filters, toggleFilters}: FiltersProps) => {
 
     return (
         <div className="min-w-80 mr-5">
-            <div className='flex flex-col '>
+            <div className='flex flex-col'>
                 <h3 className='mx-auto text-3xl font-bold'>Filters</h3>
                 <button className='text-xl mt-5 mb-5 text-blue-600 hover:text-blue-400 active:text-blue-500 ' onClick={handlerClearFilters}>Clear filters</button>
                 <div className='w-full'>

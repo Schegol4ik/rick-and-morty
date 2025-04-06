@@ -14,7 +14,7 @@ export const Card = () => {
         <div>
             <div className="max-w-7xl mx-auto mt-10 flex flex-col items-center">
                 <button onClick={() => navigate(-1)}>
-                    <AiOutlineArrowLeft className='text-3xl absolute left-60 hover:text-blue-600'/>
+                    <AiOutlineArrowLeft className='text-3xl absolute left-60 hover:text-blue-600 max-sm:left-0 max-sm:top-32'/>
                 </button>
                 <h1 className='text-5xl font-medium'>{data?.name}</h1>
                 <img src={data?.image} alt="photo" className='object-cover mt-5' />

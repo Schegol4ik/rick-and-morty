@@ -17,7 +17,7 @@ export const Characters = () => {
     const [search, setSearch] = useState<string>("");
 
     const {data, isError} = useGetCharactersQuery({page: currentPage, filters, search})
-    console.log(isError)
+
     const togglePagination = (selectedPages: number) => {
         setCurrentPage(selectedPages);
     }
@@ -38,12 +38,12 @@ export const Characters = () => {
 
     return (
         <div>
-            <div className="max-w-7xl mx-auto mt-5 flex flex-col items-center">
+            <div className="max-w-7xl mx-auto mt-5 flex flex-col items-center p-1">
                 <h2 className='text-5xl m-2.5 font-medium'>Characters</h2>
                 <Search search={search} handlerSearch={handlerSearch}/>
-                <div className="flex justify-between mt-10">
+                <div className="flex justify-between mt-10 max-sm:flex-wrap max-sm:justify-center">
                     <Filters filters={filters} toggleFilters={toggleFilters}/>
-                    <div className='flex flex-wrap justify-start w-full '>
+                    <div className='flex flex-wrap justify-start w-full max-sm:justify-center max-sm:mt-5 '>
                         {!isError
                             ? data?.results.map((item) => <CardCharacter key={item.id} name={item.name}
                                                                          image={item.image} id={item.id}

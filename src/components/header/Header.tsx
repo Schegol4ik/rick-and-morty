@@ -7,7 +7,7 @@ const Header = () => {
 
     return (
         <div className="bg-custom-light">
-            <div className="max-w-7xl mx-auto flex justify-between items-center py-6">
+            <div className="max-w-7xl mx-auto flex flex-wrap max-sm:justify-center p-1 justify-between items-center py-6">
                 <NavLink to={Path.Characters} className="text-3xl font-medium">Rick & Morty <span
                     className="text-blue-600">WiKi</span></NavLink>
                 <div className="flex items-center space-x-4 text-2xl">

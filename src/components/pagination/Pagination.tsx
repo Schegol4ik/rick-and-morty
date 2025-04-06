@@ -79,7 +79,7 @@ export const Pagination = ({currentPage, totalPages, togglePagination}: Paginati
 
     return (
         <div className='w-full flex '>
-            <div className='mx-auto my-4 flex items-center'>
+            <div className='mx-auto my-4 flex items-center flex-wrap'>
                 <button
                     className='w-10 h-10 items-center text-2xl p-1 mx-2 hover:text-blue-700 disabled:text-gray-400'
                     disabled={currentPage === 1}
